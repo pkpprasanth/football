@@ -3,7 +3,7 @@ var runteam1 = [];
 var runteam2 = [];
 var score1;
 var score2;
-
+var confetti;
 function play() {
     randomNumber = Math.floor(Math.random() * 2);;
     count = count + 1;
@@ -18,6 +18,16 @@ function play() {
         score2 = runteam2.reduce(reducer);
         var teamname1 = document.getElementById("team1").textContent;
         var teamname2 = document.getElementById("team2").textContent;
+        var confettiSettings = {
+            target: "confetti-canvas",
+            props: ["square", "triangle", "line", "circle"],
+            clock: 100,
+            max: 500,
+            animate: true
+        };
+        confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+        document.getElementById("confetti-canvas").style.zIndex = "1";
         if (score1 < score2) {
             document.getElementById("result").innerHTML = teamname2 + " Winner"
         }

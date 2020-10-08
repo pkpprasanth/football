@@ -4,7 +4,7 @@
    }
 body{
      font-family: arial;
-     background-image: url("./image/bitmap.jpg");
+     /* background-image: url("./image/bitmap.jpg"); */
      background-size: cover;
      background-repeat: no-repeat;
     }  
@@ -304,4 +304,8 @@ body{
     border: 1px solid #000;
     display: inline-block;
     border-radius: 50%;
+}
+#confetti-canvas {
+	position: absolute;
+	z-index: -1;
 }
